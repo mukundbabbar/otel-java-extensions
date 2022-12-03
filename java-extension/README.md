@@ -36,6 +36,8 @@ Consider a scenario where we want to extract transaction data from within the co
 
 In this example, a configuration file is used by the extension to instrument specific class:method and extract values when these are invoked.
 
+[Sample configuration file](https://github.com/mukundbabbar/otel-java-extensions/blob/main/java-extension/src/main/resources/instlocal.json)
+
 Output
 
 <img width="292" alt="Screen Shot 2022-12-03 at 6 37 31 pm" src="https://user-images.githubusercontent.com/5012739/205430390-86aec7b6-1c39-4868-b5e2-bb34c820deab.png">

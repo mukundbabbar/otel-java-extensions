@@ -9,20 +9,20 @@
                     "name": "firstparam",
                     "type": "param",
                     "index": 0,
-            "addTagToMetric": false
+                    "addTagToMetric": false
                 },
                 {
                     "name": "secondparam",
                     "type": "param",
                     "index": 1,
-            "addTagToMetric": false
+                    "addTagToMetric": false
                 },
-        {
+                {
                     "name": "sumresult",
                     "type": "return",
-            "addTagToMetric": false,
+                    "addTagToMetric": false,
                     "createMetric": true
-        }
+                }
             ]
         },
     "com.mulabs.java.WebFrontEndController:pay": {
@@ -32,23 +32,23 @@
                     "name": "Customer",
                     "type": "param",
                     "index": 0,
-            "addTagToMetric": true
+                    "addTagToMetric": true
                 },
         {
                     "name": "Amount",
                     "type": "param",
                     "index": 1,
-            "addTagToMetric": false,
+                    "addTagToMetric": false,
                     "createMetric": true
                 },
                 {
                     "name": "storename",
                     "type": "instance",
-            "addTagToMetric": true,
-                    "getterChain": "getName()"
+                    "addTagToMetric": true,
+                    "getterChain": "getName().toString()"
                 },
         {
-            "name": "classVar",
+                    "name": "classVar",
                     "type": "instance",
                     "addTagToMetric": true,
                     "getterChain": "classVar"
