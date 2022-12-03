@@ -1,0 +1,34 @@
+{
+    "name": "CustomExtensionConfig",
+    "description": "Classes and method names to instrument",
+    "config": {
+        "com.mulabs.java.WebFrontEndController:sum": {
+            "tags": [
+                {
+                    "name": "firstparam",
+                    "from": "param",
+                    "index": 0,
+            "metricize": false
+                },
+                {
+                    "name": "secondparam",
+                    "from": "param",
+                    "index": 1,
+            "metricize": true
+                }
+            ]
+        },
+        "com.mulabs.java.WebFrontEndController:squareAdd": {
+            "tags": [
+                {
+                    "name": "gettername",
+                    "from": "param",
+                    "index": 0,
+            "getter": "getName",
+            "invokedObject": false,
+            "metricize": false
+                }
+            ]
+    }
+    }
+}
