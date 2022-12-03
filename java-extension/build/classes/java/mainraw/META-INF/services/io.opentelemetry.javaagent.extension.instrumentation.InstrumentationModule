@@ -1,0 +1,2 @@
+com.example.javaagent.datacollector.DataCollectorInstrumentationModule
+com.example.javaagent.servlet.ServletInstrumentationModule

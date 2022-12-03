@@ -1,0 +1,59 @@
+{
+    "name": "CustomExtensionConfig",
+    "description": "Classes and method names to instrument",
+    "config": {
+        "com.mulabs.java.WebFrontEndController:sum": {
+        "name": "SumExtract",
+    "extract": [
+                {
+                    "name": "firstparam",
+                    "type": "param",
+                    "index": 0,
+            "addTagToMetric": false
+                },
+                {
+                    "name": "secondparam",
+                    "type": "param",
+                    "index": 1,
+            "addTagToMetric": false
+                },
+        {
+                    "name": "sumresult",
+                    "type": "return",
+            "addTagToMetric": false,
+                    "createMetric": true
+        }
+            ]
+        },
+    "com.mulabs.java.WebFrontEndController:pay": {
+    "name": "PayExtract",
+    "extract": [
+                {
+                    "name": "Customer",
+                    "type": "param",
+                    "index": 0,
+            "addTagToMetric": true
+                },
+        {
+                    "name": "Amount",
+                    "type": "param",
+                    "index": 1,
+            "addTagToMetric": false,
+                    "createMetric": true
+                },
+                {
+                    "name": "storename",
+                    "type": "instance",
+            "addTagToMetric": true,
+                    "getterChain": "getName()"
+                },
+        {
+            "name": "classVar",
+                    "type": "instance",
+                    "addTagToMetric": true,
+                    "getterChain": "classVar"
+        }
+            ]
+    }
+    }
+}
