@@ -1,32 +1,390 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="bin/main" path="src/main/java">
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/main" path="src/main/resources">
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/test" path="src/test/java">
+	<classpathentry output="bin/test" kind="src" path="src/test/java">
 		<attributes>
 			<attribute name="gradle_scope" value="test"/>
 			<attribute name="gradle_used_by_scope" value="test"/>
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/test" path="src/test/resources">
+	<classpathentry output="bin/test" kind="src" path="src/test/resources">
 		<attributes>
 			<attribute name="gradle_scope" value="test"/>
 			<attribute name="gradle_used_by_scope" value="test"/>
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/"/>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/"/>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry.javaagent/opentelemetry-javaagent-extension-api/1.18.0-alpha-SNAPSHOT/3b3114eae5fe760ede5b724ac5276dde5e1f5ac1/opentelemetry-javaagent-extension-api-1.18.0-alpha-SNAPSHOT-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry.javaagent/opentelemetry-javaagent-extension-api/1.18.0-alpha-SNAPSHOT/3fea98c96b9585694b45912daaaeb1fb77f0d755/opentelemetry-javaagent-extension-api-1.18.0-alpha-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.18.0/aa73159a0837d5ffef5433c491378e4e1d89f1b1/opentelemetry-sdk-extension-autoconfigure-spi-1.18.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.18.0/70feee2c92064580400e59afcf6c0232216c5357/opentelemetry-sdk-extension-autoconfigure-spi-1.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry.instrumentation/opentelemetry-instrumentation-api/1.18.0-alpha-SNAPSHOT/e101c7ad68b0ec1007c9767b47d7bbdec9201621/opentelemetry-instrumentation-api-1.18.0-alpha-SNAPSHOT-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry.instrumentation/opentelemetry-instrumentation-api/1.18.0-alpha-SNAPSHOT/908367900dc07dee2bbf66ecd3f867f5f24ad7f1/opentelemetry-instrumentation-api-1.18.0-alpha-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service/1.0.1/373f2b2c234b3d46bfe49a112cfe053b2c3b1beb/auto-service-1.0.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service/1.0.1/c9779f7372192a96c957a3df1faeeabd07881085/auto-service-1.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/1952f91d84016a39e31346c9d18bd8c9c4a128a/javax.servlet-api-3.0.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/6bf0ebb7efd993e222fc1112377b5e92a13b38dd/javax.servlet-api-3.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.11/24014867e470db3942db53b17a4902f4215d5ea8/commons-lang3-3.11-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.11/68e9a6adf7cf8eb7e9d31bbc554c7c75eeaac568/commons-lang3-3.11.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.9.3/1041faa5df2ac8422d9ff0f5bc8f09cce188a160/micrometer-core-1.9.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.9.3/5b3bd8971b0f687c7f820d2b0b631fa97850ed94/micrometer-core-1.9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api-metrics/1.10.0-alpha-rc.1/6d327a4168c491aff32198fac3f777f8bbffc229/opentelemetry-api-metrics-1.10.0-alpha-rc.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api-metrics/1.10.0-alpha-rc.1/2689fde8a73286589ce6e29fa1f0761affbce1a8/opentelemetry-api-metrics-1.10.0-alpha-rc.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk/1.18.0/e549d32908fa130494a6536aa7be7bce4a9960f8/opentelemetry-sdk-1.18.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk/1.18.0/5477b700532ba8ead93359c1adcbd0acb0aa9251/opentelemetry-sdk-1.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-trace/1.18.0/5779048886af07436fa2f01442d8858544472509/opentelemetry-sdk-trace-1.18.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-trace/1.18.0/dd9057ef6e14f38d405fceb857064e4383623231/opentelemetry-sdk-trace-1.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-metrics/1.18.0/32ceab1f9b5226a1aa5b9aff5920b63680296f90/opentelemetry-sdk-metrics-1.18.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-metrics/1.18.0/a3b44280be05f8ce5f6127edad6dd2853f2cc5f2/opentelemetry-sdk-metrics-1.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-common/1.18.0/b56b0363ad882e0ec7d8622fa9f966540fb74179/opentelemetry-sdk-common-1.18.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-sdk-common/1.18.0/fd96e64ce139cf23dcedbbee2e58cfe93e01352f/opentelemetry-sdk-common-1.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.18.0/3fd5fa93a4ea2b86cf5cf5905cf156f60e9fd033/opentelemetry-api-1.18.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.18.0/b06e7e044b9e219b4934aa0f3b367a447418d8df/opentelemetry-api-1.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.17/63577e87886c76228db9f8a2c50ea43cde5072eb/snakeyaml-1.17-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.17/7a27ea250c5130b2922b86dea63cbb1cc10a660c/snakeyaml-1.17.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.googlecode.json-simple/json-simple/1.1/19c6d8dee6803c520d855ff7e8a8c3d97f1271ec/json-simple-1.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.googlecode.json-simple/json-simple/1.1/5e303a03d04e6788dddfa3655272580ae0fc13bb/json-simple-1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-dep/1.12.10/e6ab4634086f1a4bee03439d737d5759350f64ea/byte-buddy-dep-1.12.10-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-dep/1.12.10/86fb53aa6e9b77400cc30dc3da59debee940d7dd/byte-buddy-dep-1.12.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service-annotations/1.0.1/81d155712ad79e1914732d23cd255d88143676aa/auto-service-annotations-1.0.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service-annotations/1.0.1/ac86dacc0eb9285ea9d42eee6aad8629ca3a7432/auto-service-annotations-1.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.auto/auto-common/1.2/4fe76e8a3f5aaafa743d23bac4347803ecda3d70/auto-common-1.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.auto/auto-common/1.2/ca270191fd7d2a7297da7c8f29184206df10c67d/auto-common-1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.0.1-jre/d34772c01bd6637982d1aafe895c4fcd8b42e139/guava-31.0.1-jre-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.0.1-jre/119ea2b2bc205b138974d351777b20f02b92704b/guava-31.0.1-jre.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.12/d8cf7bad79ef75fd41395c5f464ea38777463d95/HdrHistogram-2.1.12-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.12/6eb7552156e0d517ae80cc2247be1427c8d90452/HdrHistogram-2.1.12.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.18.0/2448115297b3b0d5775132512bcb2deaa4b686b/opentelemetry-context-1.18.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.18.0/d42e8b8a61e3cfdc3c347bbe6c1545817d93892f/opentelemetry-context-1.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.3/1692e21847cf3db0b24e1938553cab84f50bf03d/asm-commons-9.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.3/1f2a432d1212f5c352ae607d7b61dcae20c20af5/asm-commons-9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/ce26e415ccafa10c6624a07bdb38d969110f568f/asm-9.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/8e6300ef51c1d801a7ed62d07cd221aca3a90640/asm-9.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1d064e61aad6c51cc77f9b59dc2cccc78e792f5a/failureaccess-1.0.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.12.0/10dacb8b36398debceca36cd0db5f3316967f80e/checker-qual-3.12.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.12.0/d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5/checker-qual-3.12.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.7.1/2ca80bf7ac820fce6c743561b550c8bfb6c87c57/error_prone_annotations-2.7.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.7.1/458d9042f7aa6fa9a634df902b37f544e15aacac/error_prone_annotations-2.7.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/d26c56180205cbb50447c3eca98ecb617cf9f58b/j2objc-annotations-1.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.10.0-rc.1/649578a1fb5d3391de653d65306b81c2c4b9a8e3/opentelemetry-api-1.10.0-rc.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.10.0-rc.1/919fe1cb7aa8be4a1fd0a62d08074bfd122d0f1/opentelemetry-api-1.10.0-rc.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.latencyutils/LatencyUtils/2.0.3/fbc38259e2077a428984637d811dac542a6a913e/LatencyUtils-2.0.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.latencyutils/LatencyUtils/2.0.3/769c0b82cb2421c8256300e907298a9410a2a3d3/LatencyUtils-2.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.10.0-rc.1/a8b1e0a976e33f236b8a3feb5a7eff394ae09fcf/opentelemetry-context-1.10.0-rc.1-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.10.0-rc.1/cfa58c578797921a234d20e273fd29b9d20cd0e6/opentelemetry-context-1.10.0-rc.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.17.0/54bb8ec73dbab2cbba56e3849deda204b5b76f45/opentelemetry-api-1.17.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-api/1.17.0/5b810a634485ae8adef7c4e2037a300490182413/opentelemetry-api-1.17.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.testcontainers/testcontainers/1.16.2/ee2fdd95a4d1ff1b035abae4cfe91e0c1c117514/testcontainers-1.16.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.testcontainers/testcontainers/1.16.2/9d5eedf5f75a399d339a3781199cdff7153959ba/testcontainers-1.16.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.11.2/4f0c6c172892b0fb6b7f09a54cc616b9f9516bca/jackson-databind-2.11.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.11.2/ee08bbd8975dde844307fe8309dfcd5ec7ee129d/jackson-databind-2.11.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.12.4/1bbbef52c84085865f930c4e809a9cd78ba40f55/protobuf-java-util-3.12.4-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.12.4/e41538c32cb74a13ef9ab96fa102a29d13095821/protobuf-java-util-3.12.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.12.12/2424f05075bc08b19d8aa06b7d88250e2e068ce3/okhttp-3.12.12-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.12.12/d3e1ce1d2b3119adf270b2d00d947beb03fe3321/okhttp-3.12.12.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry.proto/opentelemetry-proto/0.16.0-alpha/5025887b428cfd1a6442d54ea9da6292311a6341/opentelemetry-proto-0.16.0-alpha-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry.proto/opentelemetry-proto/0.16.0-alpha/f8acd95e40bbfa24c4f260fe0a6175ca5c1f3009/opentelemetry-proto-0.16.0-alpha.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.9.0/18dd59a6622942632cfc7a38c2feae4a3066fc7c/junit-platform-commons-1.9.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.9.0/b727889107fc28c7460b21d1083212f8ce7602c6/junit-platform-commons-1.9.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.9.0/e23e68771c361cdc17004c5ec30095d609df980/junit-jupiter-api-5.9.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.9.0/a44f7eba3ea214f6ec87ad9fccd3b2ac4681a4/junit-jupiter-api-5.9.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.17.0/450d466a74d374ef2c6b009a9f290f08bc02ae8e/opentelemetry-context-1.17.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/io.opentelemetry/opentelemetry-context/1.17.0/fff5f3a2c36eaabbf2d4d9d578556967ba0b9eed/opentelemetry-context-1.17.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/junit/junit/4.13.2/33987872a811fe4d4001ed494b07854822257f42/junit-4.13.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/junit/junit/4.13.2/8ac9e16d933b6fb43bc7f576336b8f4d7eb5ba12/junit-4.13.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.github.docker-java/docker-java-api/3.2.12/e0b30754f43d39564ea644173fbddaa8b735e2a/docker-java-api-3.2.12-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.github.docker-java/docker-java-api/3.2.12/6716b0483926adbcce0fd4636664e711debafc11/docker-java-api-3.2.12.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.github.docker-java/docker-java-transport-zerodep/3.2.12/efe12190cda7231cb9b1917275c0e00e49f1b8cd/docker-java-transport-zerodep-3.2.12-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.github.docker-java/docker-java-transport-zerodep/3.2.12/131e656a25622f7288aaac531e7d3290d3e8936d/docker-java-transport-zerodep-3.2.12.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.32/4381b152f738580aef4e436b2692a3db30609b26/slf4j-api-1.7.32-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.32/cdcff33940d9f2de763bc41ea05a0be5941176c3/slf4j-api-1.7.32.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.21/b3e0a269baa0d05b02f9b4447be463d25da8c097/commons-compress-1.21-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.21/4ec95b60d4e86b5c95a0e919cb172a0af98011ef/commons-compress-1.21.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.rnorth.duct-tape/duct-tape/1.0.8/cf14d77239dd2a6fe0e03a2e8f29c6a80373be1/duct-tape-1.0.8-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.rnorth.duct-tape/duct-tape/1.0.8/92edc22a9ab2f3e17c9bf700aaee377d50e8b530/duct-tape-1.0.8.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.11.2/128e08218b68149f37f56b209fc8ccc5b5321142/jackson-annotations-2.11.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.11.2/e0a7f61fce3e3eac38a079c11831868269de2ea/jackson-annotations-2.11.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.11.2/f08c2af3b8715d9ace84dc111170cb1e28e104ef/jackson-core-2.11.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.11.2/bc022ab0f0c83c07f9c52c5ab9a6a4932b15cc35/jackson-core-2.11.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.19.4/62d51f136d2329ae959a3b804865d3f91f1d5d0f/protobuf-java-3.19.4-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.19.4/748e4e0b9e4fa6b9b1fe65690aa04a9db56cfc4d/protobuf-java-3.19.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/29.0-android/63f9bc5fbf2ebfe6b17683f8eac8419588295a28/guava-29.0-android-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/29.0-android/a51b7d9cbfcce79a88c961907c1767c6de201f31/guava-29.0-android.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.3.4/950adf6dcd7361e3d1e544a6e13b818587f95d14/error_prone_annotations-2.3.4-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.3.4/dac170e4594de319655ffb62f41cbd6dbb5e601e/error_prone_annotations-2.3.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.6/1b9adea7bbe0b251818f42fde0bd2988d7e5f20a/gson-2.8.6-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.6/9180733b7df8542621dc12e21e87557e8c99b8cb/gson-2.8.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.15.0/5667938926bdda03add0eac8c522164ce4180e5e/okio-1.15.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.15.0/bc28b5a964c8f5721eb58ee3f3c47a9bcbf4f4d8/okio-1.15.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/41d55b3c2254de9837b4ec8923cbd371b8a7eab5/opentest4j-1.2.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/28c11eb91f9b6d8e200631d46e20a7f407f2a046/opentest4j-1.2.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/e0787a997746ac32639e0bf3cb27af8dce8a3428/apiguardian-api-1.1.2-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest-core-1.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/17.0.0/c4824e1e82f2783838485a3536db0b8f4d53aa95/annotations-17.0.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/17.0.0/8ceead41f4e71821919dbdb7a9847608f1a938cb/annotations-17.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.github.docker-java/docker-java-transport/3.2.12/1e65d0f0e9fffd5dfbb3d3651c2764aa5972a755/docker-java-transport-3.2.12-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/com.github.docker-java/docker-java-transport/3.2.12/88ad0cd6d67c075a5f622dbf7cb930ef4b1c008f/docker-java-transport-3.2.12.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.8.0/2401f953c4234333699632298c8119bcf5ea9194/jna-5.8.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.8.0/3551d8d827e54858214107541d3aff9c615cb615/jna-5.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-compat-qual/2.5.5/54d4253d4d8723096a95b7551bd5639e7e2affba/checker-compat-qual-2.5.5-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-compat-qual/2.5.5/435dc33e3019c9f019e15f01aa111de9d6b2b79c/checker-compat-qual-2.5.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.9.0/bda902e43fe1f62674224452defd31f4c251e29d/junit-platform-engine-1.9.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.9.0/bd46891f01817b5ffdd368cb0482a34746610acb/junit-platform-engine-1.9.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.9.0/1342cdbc880788707e133ec3a8dc9cbf84b041df/junit-jupiter-engine-5.9.0-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.9.0/cc1cb5efae97493dcffb687253a0964ad2e7b99/junit-jupiter-engine-5.9.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/cfd5385e0c5ed1c8a5dce57d86e79cf357153a64/logback-classic-1.2.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/7c4f3c474fb2c041d8028740440937705ebb473a/logback-classic-1.2.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.3/3ebabe69eba0196af9ad3a814f723fb720b9101e/logback-core-1.2.3-sources.jar" kind="lib" path="/Users/mbabbar/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.3/864344400c3d4d92dfeb0a305dc87d953677c03c/logback-core-1.2.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
 </classpath>
