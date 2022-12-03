@@ -40,14 +40,19 @@ In this example, a configuration file is used by the extension to instrument spe
 
 Output
 
+Extracted values are added as span tags to assist with troubleshooting
+
 <img width="292" alt="Screen Shot 2022-12-03 at 6 37 31 pm" src="https://user-images.githubusercontent.com/5012739/205430390-86aec7b6-1c39-4868-b5e2-bb34c820deab.png">
 
+Splunk Observability Cloud to visualize the distribution of error or latency accross different values of these extracted values.
 
 <img width="931" alt="Screen Shot 2022-12-03 at 6 36 54 pm" src="https://user-images.githubusercontent.com/5012739/205430395-1cd40589-4050-4cc6-833e-e82d53acdfef.png">
 
+Histogram metric is created for any configured variable and for each of the extractor configured to count invocations. Tags from the same intercept of class:method are added to the metric if the AddTagToMetric property is set to true in the configuration file.
 
 <img width="1373" alt="Screen Shot 2022-12-03 at 6 11 37 pm" src="https://user-images.githubusercontent.com/5012739/205429555-0cd232df-f7e4-456f-a3c0-a08b7179fb56.png">
 
+Extracted details are also pushed to stdout so that they can be analyzed using Splunk Cloud/Enterprise platform.
 
 ## Extensions examples
 
