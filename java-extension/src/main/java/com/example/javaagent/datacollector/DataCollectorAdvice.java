@@ -34,7 +34,7 @@ public class DataCollectorAdvice {
 			
 		//put check on ret null TODO
 		Logger logger = DCConfigHelper.logger;
-		logger.log(Level.INFO,"---------------Process: " + type + " " + method + "---------------");
+		logger.log(Level.INFO,"---------------Invocation: " + type + " " + method + "---------------");
 		JSONObject rules = (JSONObject) ((JSONObject) DCConfigHelper.configJson.get("config")).get(type + ":" + method);
 		JSONArray extract = (JSONArray) rules.get("extract");
 		String dcName = (String) rules.get("name");
@@ -45,16 +45,22 @@ public class DataCollectorAdvice {
     	List<String> items = null;
     	DoubleHistogram doubleHistogram = null;
     	DoubleHistogram doubleHistogramDC = null;
-    	Attributes attr = null;
+    	Attributes attr,attrSpans = null;
     	AttributesBuilder attrBuilder = Attributes.builder();
+    	AttributesBuilder attrBuilderSpan = Attributes.builder();
     	Map<String, Double> metricMap = new HashMap<String, Double>();
     	Method tempMethod = null;
     	//metric map - to store all metrics from this extractor
     	//attributes - to store all attributes from this extractor
+    	
+    	//add default attributes
+    	attrBuilder.put("source", "otel-extension");
+		attrBuilder.put("traceId", Java8BytecodeBridge.currentSpan().getSpanContext().getTraceId());
+		attrBuilderSpan.put("source", "otel-extension");
+		attrBuilderSpan.put("traceId", Java8BytecodeBridge.currentSpan().getSpanContext().getTraceId());
 		while (iteratorObj.hasNext()) {
             	JSONObject o = (JSONObject)iteratorObj.next();
 		        //Add tags
-            	logger.log(Level.INFO,"---" + o.toJSONString());
             	Object tagValue = null;
 				if (o.get("type").equals("param"))
 				{
@@ -73,8 +79,8 @@ public class DataCollectorAdvice {
 					tagValue = that;
 				}
 
-				//object
-				if (o.containsKey("getterChain"))	//working on param or return object
+				//process getter chain if configured
+				if (o.containsKey("getterChain"))	
 				{
 					temp = tagValue;
 				    items = Arrays.asList(o.get("getterChain").toString().replaceAll("\\(\\)","").split("\\."));
@@ -98,16 +104,15 @@ public class DataCollectorAdvice {
 				if (tagValue != null)
 				{
 					double val;
+					attrBuilderSpan.put(o.get("name").toString(), tagValue.toString());
 					
-					logger.log(Level.INFO,"Adding Tag: " + o.get("name").toString() + " " + tagValue.toString());
-					attr = Attributes.of(AttributeKey.stringKey(o.get("name").toString()), tagValue.toString());
-					Java8BytecodeBridge.currentSpan().setAllAttributes(attr);
+					//add tags to metrics
 					if (o.containsKey("addTagToMetric") && o.get("addTagToMetric").equals(true))
 					{
 						attrBuilder.put(o.get("name").toString(), tagValue.toString());
 					}
-					//check if metric required..
 					
+					//check if metric required from any of the extracted object
 					if (o.containsKey("createMetric") && o.get("createMetric").equals(true))
 					{
 			    		
@@ -126,20 +131,28 @@ public class DataCollectorAdvice {
 				
 		}
 		
+		//flush tags to span
+		attrSpans = attrBuilderSpan.build();
+		Java8BytecodeBridge.currentSpan().setAllAttributes(attrSpans);
+		logger.log(Level.INFO,attrSpans.toString());
 		
+		//flush metrics
+		attr = attrBuilder.build();
 		for (Entry<String, Double> entry : metricMap.entrySet()) 
 		{
-			attr = attrBuilder.build();
+			
 			logger.log(Level.INFO,"Adding Metric: " + entry.getKey() + " " + entry.getValue() + ", attributes: " + attr.toString());
 			doubleHistogram = meter.histogramBuilder(entry.getKey()).build();
 			doubleHistogram.record(entry.getValue().doubleValue(),attr);
-			//For Splunk analytics
-			Java8BytecodeBridge.currentSpan().getSpanContext().getTraceId();
-			logger.log(Level.INFO,dcName + "," + entry.getKey()+":"+entry.getValue().doubleValue()+","+attr.toString()+","+Java8BytecodeBridge.currentSpan().getSpanContext().getTraceId());
+			//For Splunk analytics/logs - Probably need specific logger
+			logger.log(Level.INFO,dcName + "," + entry.getKey()+":"+entry.getValue().doubleValue()+","+attr.toString());
 		}
-		//create DC level metric anyways, for each DC, there will be 1 metric
-		doubleHistogram = meter.histogramBuilder(dcName).build();
-		doubleHistogram.record(1,attr);
+
+		//test span event
+//		Java8BytecodeBridge.currentSpan().addEvent("event."+dcName, attr);
+		//create DC level metric anyways, for each DC, there will be 1 metric to send to HEC as event
+		meter.counterBuilder("ext."+dcName+".invocation").build().add(1, attr);
+		logger.log(Level.INFO,"ext."+dcName+".invocation"+","+attr.toString());
 		logger.log(Level.INFO,"---------------Done------------------------");
 	}
 }
