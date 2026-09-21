@@ -1,59 +1,50 @@
 {
-    "name": "CustomExtensionConfig",
-    "description": "Classes and method names to instrument",
-    "config": {
-        "com.mulabs.java.WebFrontEndController:sum": {
-        "name": "SumExtract",
-    "extract": [
-                {
-                    "name": "firstparam",
-                    "type": "param",
-                    "index": 0,
-            "addTagToMetric": false
-                },
-                {
-                    "name": "secondparam",
-                    "type": "param",
-                    "index": 1,
-            "addTagToMetric": false
-                },
+  "version": 1,
+  "instrumentations": [
+    {
+      "id": "sum",
+      "class": "com.mulabs.java.WebFrontEndController",
+      "onMethod": "sum",
+      "return": [
         {
-                    "name": "sumresult",
-                    "type": "return",
-            "addTagToMetric": false,
-                    "createMetric": true
+          "attribute": "sum.result",
+          "createMetric": true
         }
-            ]
+      ]
+    },
+    {
+      "id": "pay",
+      "class": "com.mulabs.java.WebFrontEndController",
+      "onMethod": "pay",
+      "args": [
+        {
+          "attribute": "customer",
+          "index": 0,
+          "addTagToMetric": true
         },
-    "com.mulabs.java.WebFrontEndController:pay": {
-    "name": "PayExtract",
-    "extract": [
-                {
-                    "name": "Customer",
-                    "type": "param",
-                    "index": 0,
-            "addTagToMetric": true
-                },
         {
-                    "name": "Amount",
-                    "type": "param",
-                    "index": 1,
-            "addTagToMetric": false,
-                    "createMetric": true
-                },
-                {
-                    "name": "storename",
-                    "type": "instance",
-            "addTagToMetric": true,
-                    "getterChain": "getName()"
-                },
-        {
-            "name": "classVar",
-                    "type": "instance",
-                    "addTagToMetric": true,
-                    "getterChain": "classVar"
+          "attribute": "amount",
+          "index": 1,
+          "createMetric": true
         }
-            ]
+      ],
+      "instance": [
+        {
+          "attribute": "store.name",
+          "call": "getName",
+          "addTagToMetric": true
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "class": "com.mulabs.java.WebFrontEndController",
+      "instance": [
+        {
+          "attribute": "class.var",
+          "field": "classVar"
+        }
+      ]
     }
-    }
+  ]
 }

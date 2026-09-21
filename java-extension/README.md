@@ -1,69 +1,71 @@
-## Introduction
+## Data extractor extension
 
-Extensions add new features and capabilities to the agent without having to create a separate distribution or changing the application code (for examples and ideas, see [Use cases for extensions](#sample-use-cases)).
+This module adds OpenTelemetry Java agent instrumentation that extracts method parameters, return values, and instance fields, then writes them as span attributes and metrics. Application code does not need to change.
 
-The contents in this folder demonstrate how to create an extension for the OpenTelemetry Java instrumentation agent, with examples for every extension point. 
+It is an [OpenTelemetry Java agent extension](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/examples/extension/README.md). The extractor lives in `src/main/java/com/example/javaagent/datacollector`.
 
-> Read both the source code and the Gradle build script, as they contain documentation that explains the purpose of all the major components.
+## Requirements
 
-## Build and add extensions
+- **Instrumented application:** Java 8 or later. The extension is compiled with `--release 8`.
+- **OpenTelemetry Java agent:** **2.31.x** (this build uses `2.31.1`). The extension API is alpha, so pair the jar with the same agent line you compiled against.
+- **Build JDK:** 17 or later (Gradle 9). The output bytecode is still Java 8.
 
-To build this extension project, run `./gradlew build`. You can find the resulting jar file in `build/libs/`. 
+## Attach to any Java 8+ app
 
-To add the extension to the instrumentation agent:
+No application code changes. Copy the extension jar and a JSON config, then point the existing OpenTelemetry Java agent at both.
 
-1. Copy the jar file to a host that is running an application to which you've attached the OpenTelemetry Java instrumentation.
-2. Modify the startup command to add the full path to the extension file. For example:
+1. Build once: `./gradlew assemble` → `build/libs/otel-java-extension-1.0-all.jar`
+2. Copy [instlocal.json](src/main/resources/instlocal.json) and set `class` plus `onMethod` and/or `instance` for the target app
+3. Set two settings (env vars or equivalent `-D` flags):
 
      ```bash
-     java -javaagent:path/to/opentelemetry-javaagent.jar \
-          -Dotel.javaagent.extensions=build/libs/otel-java-extension-1.0-all.jar
-          -Dinstrumentation.config=/home/ubuntu/inst2.json
-          -jar myapp.jar
+     export OTEL_JAVAAGENT_EXTENSIONS=/path/to/otel-java-extension-1.0-all.jar
+     export INSTRUMENTATION_CONFIG=/path/to/instlocal.json
      ```
-Note: to load multiple extensions, you can specify a comma-separated list of extension jars or directories (that
-contain extension jars) for the `otel.javaagent.extensions` value.
+
+The process still needs `-javaagent:/path/to/opentelemetry-javaagent.jar` (agent **2.31.x**). That is the upstream agent, not this repo.
+
+`OTEL_JAVAAGENT_EXTENSIONS` is the [standard agent extension setting](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/examples/extension/README.md). `INSTRUMENTATION_CONFIG` (or `-Dinstrumentation.config`) is this extractor’s config path.
+
+If neither config setting is set, the jar loads the bundled sample `instlocal.json` (the sample-app `WebFrontEndController` methods). For any other app you must supply your own JSON.
+
+Note: to load multiple extensions, you can specify a comma-separated list of extension jars or directories for `OTEL_JAVAAGENT_EXTENSIONS`.
 
 ## Embed extensions in the OpenTelemetry Agent
 
 To simplify deployment, you can embed extensions into the OpenTelemetry Java Agent to produce a single jar file. With an integrated extension, you no longer need the `-Dotel.javaagent.extensions` command line option.
 
-## Sample use case - Data extractor
+For more information, see the `extendedAgent` task in [build.gradle](build.gradle).
 
-Extensions are designed to override or customize the instrumentation provided by the upstream agent without having to create a new OpenTelemetry distribution or alter the agent code in any way.
+## Sample use case
 
-Consider a scenario where we want to extract transaction data from within the code eg. method parameters or return value of a method and use them as tags or metrics.
+A configuration file tells the extension which class and method to hook, and which values to extract.
 
-In this example, a configuration file is used by the extension to instrument specific class:method and extract values when these are invoked.
+[Sample configuration file](src/main/resources/instlocal.json)
 
-[Sample configuration file](https://github.com/mukundbabbar/otel-java-extensions/blob/main/java-extension/src/main/resources/instlocal.json)
+Each block needs a `class`. Include **only** the extracts you want — nothing else is required:
 
-Output
+- `{ "class", "onMethod", "return": [...] }` — one return value
+- `{ "class", "onMethod", "args": [{ "index": 0, "attribute": "..." }] }` — one method parameter
+- `{ "class", "onMethod", "args": [...], "instance": [...] }` — a parameter plus an instance field/getter
+- `{ "class", "instance": [{ "field" | "call" | "getter" }] }` — instance only; `onMethod` is not required
 
-Extracted values are added as span tags to assist with troubleshooting
+`id` is optional. `args`, `return`, and `instance` are all optional. A missing section is skipped, not an error.
+
+Use `call` (or `getter`) for a no-arg getter such as `getName`, and `field` for a field such as `classVar`. Optional `path` is a list of `{ "call" }` / `{ "field" }` steps.
+
+Instance-only blocks (no `onMethod`) hook every method of that class on their own. They do not require another method extract to exist. Prefer putting `instance` on the same block as `onMethod` when you already have a method hook, so you do not instrument the whole class.
+
+Extracted values are added as span attributes. A histogram is emitted only when `createMetric` is `true` on that item. Metric names are `extract.{attribute}` (lowercase, dotted), with `extract.class` / `extract.method` (and `extract.id` if set). `addTagToMetric` copies that item onto the metric as a dimension. Invocation counters are not created unless you extract a value with `createMetric`.
 
 <img width="292" alt="Screen Shot 2022-12-03 at 6 37 31 pm" src="https://user-images.githubusercontent.com/5012739/205430390-86aec7b6-1c39-4868-b5e2-bb34c820deab.png">
 
-Splunk Observability Cloud to visualize the distribution of error or latency accross different values of these extracted values.
+Splunk Observability Cloud can visualize the distribution of error or latency across different values of these extracted values.
 
 <img width="931" alt="Screen Shot 2022-12-03 at 6 36 54 pm" src="https://user-images.githubusercontent.com/5012739/205430395-1cd40589-4050-4cc6-833e-e82d53acdfef.png">
 
-Histogram metric is created for any configured variable and for each of the extractor configured to count invocations. Tags from the same intercept of class:method are added to the metric if the AddTagToMetric property is set to true in the configuration file.
+Tags from the same intercept are added to the metric if `addTagToMetric` is `true` on that extract item.
 
 <img width="1373" alt="Screen Shot 2022-12-03 at 6 11 37 pm" src="https://user-images.githubusercontent.com/5012739/205429555-0cd232df-f7e4-456f-a3c0-a08b7179fb56.png">
 
-Extracted details are also pushed to stdout so that they can be analyzed using Splunk Cloud/Enterprise platform.
-
-## Extensions examples
-
-* Custom `IdGenerator`: [DemoIdGenerator](src/main/java/com/example/javaagent/DemoIdGenerator.java)
-* Custom `TextMapPropagator`: [DemoPropagator](src/main/java/com/example/javaagent/DemoPropagator.java)
-* Custom `Sampler`: [DemoSampler](src/main/java/com/example/javaagent/DemoSampler.java)
-* Custom `SpanProcessor`: [DemoSpanProcessor](src/main/java/com/example/javaagent/DemoSpanProcessor.java)
-* Custom `SpanExporter`: [DemoSpanExporter](src/main/java/com/example/javaagent/DemoSpanExporter.java)
-* Additional instrumentation: [DemoServlet3InstrumentationModule](src/main/java/com/example/javaagent/instrumentation/DemoServlet3InstrumentationModule.java)
-
-For more examples, see [DemoServlet3InstrumentationModule](src/main/java/com/example/javaagent/instrumentation/DemoServlet3InstrumentationModule.java).
-
-For more information, see the `extendedAgent` task in [build.gradle](build.gradle).
-
+Extracted details are also pushed to stdout so that they can be analyzed using Splunk Cloud/Enterprise.

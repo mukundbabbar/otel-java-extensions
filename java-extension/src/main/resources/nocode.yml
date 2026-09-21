@@ -1,0 +1,33 @@
+# Splunk no-code rules for the sample app.
+# Compare with instlocal.json: same extracts, different attribute names (nc.* prefix).
+# Docs: https://help.splunk.com/en/splunk-observability-cloud/manage-data/instrument-back-end-services/instrument-back-end-applications-to-send-spans-to-splunk-apm/instrument-a-java-application/no-code-instrumentation
+#
+# current_span: true writes onto the active HTTP span (same place as the JSON extension).
+# Remove current_span to get a child span per method instead.
+# returnValue is only documented for span_status; nc.sum.result / nc.paystatus may be missing.
+
+- class: com.mulabs.java.WebFrontEndController
+  method: sum
+  current_span: true
+  attributes:
+    - key: "nc.firstparam"
+      value: param0
+    - key: "nc.secondparam"
+      value: param1
+    - key: "nc.sum.result"
+      value: returnValue
+
+- class: com.mulabs.java.WebFrontEndController
+  method: pay
+  current_span: true
+  attributes:
+    - key: "nc.customer"
+      value: param0
+    - key: "nc.amount"
+      value: param1
+    - key: "nc.paystatus"
+      value: returnValue
+    - key: "nc.store.name"
+      value: this.getName()
+    - key: "nc.class.var"
+      value: this.classVar
